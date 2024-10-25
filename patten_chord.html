@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Complex Chord Progression Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #container {
+            text-align: center;
+        }
+        #chords {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="chords">Click the button for a random complex chord progression</div>
+    <button onclick="generateChords()">Get Random Chord Progression</button>
+</div>
+
+<script>
+    function generateChords() {
+        const chords = [
+            'C', 'Cm', 'Cdim', 'Caug', 'Cmaj7', 'Cm7', 'C7', 'Cdim7', 'Cm7♭5', 'Cm(maj7)',
+            'C#', 'C#m', 'C#dim', 'C#aug', 'C#maj7', 'C#m7', 'C#7', 'C#dim7', 'C#m7♭5', 'C#m(maj7)',
+            'D', 'Dm', 'Ddim', 'Daug', 'Dmaj7', 'Dm7', 'D7', 'Ddim7', 'Dm7♭5', 'Dm(maj7)',
+            'D#', 'D#m', 'D#dim', 'D#aug', 'D#maj7', 'D#m7', 'D#7', 'D#dim7', 'D#m7♭5', 'D#m(maj7)',
+            'E', 'Em', 'Edim', 'Eaug', 'Emaj7', 'Em7', 'E7', 'Edim7', 'Em7♭5', 'Em(maj7)',
+            'F', 'Fm', 'Fdim', 'Faug', 'Fmaj7', 'Fm7', 'F7', 'Fdim7', 'Fm7♭5', 'Fm(maj7)',
+            'F#', 'F#m', 'F#dim', 'F#aug', 'F#maj7', 'F#m7', 'F#7', 'F#dim7', 'F#m7♭5', 'F#m(maj7)',
+            'G', 'Gm', 'Gdim', 'Gaug', 'Gmaj7', 'Gm7', 'G7', 'Gdim7', 'Gm7♭5', 'Gm(maj7)',
+            'G#', 'G#m', 'G#dim', 'G#aug', 'G#maj7', 'G#m7', 'G#7', 'G#dim7', 'G#m7♭5', 'G#m(maj7)',
+            'A', 'Am', 'Adim', 'Aaug', 'Amaj7', 'Am7', 'A7', 'Adim7', 'Am7♭5', 'Am(maj7)',
+            'A#', 'A#m', 'A#dim', 'A#aug', 'A#maj7', 'A#m7', 'A#7', 'A#dim7', 'A#m7♭5', 'A#m(maj7)',
+            'B', 'Bm', 'Bdim', 'Baug', 'Bmaj7', 'Bm7', 'B7', 'Bdim7', 'Bm7♭5', 'Bm(maj7)'
+        ];
+        let progression = '';
+        for (let i = 0; i < 4; i++) {
+            const randomChord = chords[Math.floor(Math.random() * chords.length)];
+            progression += `| ${randomChord} `;
+        }
+        progression += '|';
+        document.getElementById('chords').innerText = progression;
+    }
+</script>
+
+</body>
+</html>
